@@ -1,0 +1,16 @@
+<!-- In an ideal would the js could access the user settings, but for now we have to proxy via this html file  -->
+<!doctype html>
+<html lang="en">
+<head>
+  <script type="text/javascript">
+    safari.application.addEventListener( "message", function( e ) {
+      if( e.name === "getRepos" ) {
+        e.target.page.dispatchMessage( "setRepos", {
+          repos: safari.extension.settings.repos
+        });
+      }
+    }, false );
+  </script>
+</head>
+<body></body>
+</html>
