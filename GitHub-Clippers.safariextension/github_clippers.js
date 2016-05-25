@@ -54,7 +54,6 @@ var start = function() {
   var settings, init = function() {
   
     if (validateWithSettings(settings)) {
-      console.log("validates")
       // Keep an eye out for changes WRT deleting branches when you hit the merge button
       observeDOM( document.getElementById('js-repo-pjax-container'), function(){  detectAndTapDeleteBranch() });
       detectAndTapDeleteBranch()
@@ -63,7 +62,6 @@ var start = function() {
 
   // listen for an incoming setSettings message
   safari.self.addEventListener( "message", function( e ) {
-    console.log("got", e.name)
     if( e.name === "setRepos" ) {
       settings = e.message;
       init();
@@ -72,7 +70,6 @@ var start = function() {
 
   // ask settings_proxy.html for user settings
   safari.self.tab.dispatchMessage( "getRepos" );
-    console.log("sent")
 }
 
 start()

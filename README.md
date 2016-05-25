@@ -4,4 +4,6 @@ Do your colleagues like to have a nice clean repo, but you're a slob who doesn't
 
 [![](web/image.png)](https://github.com/orta/github-clippers/blob/master/GitHub-Clippers.safariextz.zip?raw=true)
 
+For organization-level deletions, just use your org username in the list of repos to delete.
+
 [download](https://github.com/orta/github-clippers/blob/master/GitHub-Clippers.safariextz.zip?raw=true)
