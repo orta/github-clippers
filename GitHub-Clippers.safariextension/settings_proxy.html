@@ -6,7 +6,9 @@
     safari.application.addEventListener( "message", function( e ) {
       if( e.name === "getRepos" ) {
         e.target.page.dispatchMessage( "setRepos", {
-          repos: safari.extension.settings.repos
+          repos: safari.extension.settings.repos,
+          delete_all: safari.extension.settings.delete_all,
+          whitelist: safari.extension.settings.whitelist,
         });
       }
     }, false );
