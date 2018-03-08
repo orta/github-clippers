@@ -37,7 +37,7 @@ var observeDOM = (function() {
 // Look through the DOM to find the pull request merging section on the GitHub page
 // find the form that's associated with deleting a PR, then hit it.
 
-var detectAndTapDeleteBranch = function() {
+var detectAndTapDeleteBranch = function(settings) {
   var mergeSection = document.getElementById("partial-pull-merging")
   if (!mergeSection) {
     return
@@ -67,9 +67,9 @@ var start = function() {
       if (validateWithSettings(settings)) {
         // Keep an eye out for changes WRT deleting branches when you hit the merge button
         observeDOM(document.getElementById("js-repo-pjax-container"), function() {
-          detectAndTapDeleteBranch()
+          detectAndTapDeleteBranch(settings)
         })
-        detectAndTapDeleteBranch()
+        detectAndTapDeleteBranch(settings)
       }
     }
 
